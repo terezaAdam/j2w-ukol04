@@ -37,17 +37,18 @@ public class VizitkaController {
     return result;
   }
 
-    @PostMapping(path = "/nova")
-    public String append (Vizitka vizitka) {
-      service.append(vizitka);
-      return "redirect:/";
-  }
-  @PostMapping(path = "/delete")
-  public String delete (int id) {
+
+
+  @PostMapping(path = "/", params = "id")
+  public String delete(int id) {
     service.deleteById(id);
     return "redirect:/";
   }
 
+  @PostMapping(path = "/nova")
+  public String append(Vizitka vizitka) {
+    service.append(vizitka);
+    return "redirect:/nova";
+  }
 
 }
-

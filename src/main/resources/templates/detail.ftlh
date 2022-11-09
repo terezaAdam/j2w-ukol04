@@ -26,10 +26,10 @@
         <iframe style="border:none" src="https://frame.mapy.cz/?q=${"Václavské náměstí 837/11, Praha"?url}" width="100%" height="100%" frameborder="0"></iframe>
     </div>
     <nav>
-        <a href="/">◂ zpět na seznam</a>
-        <form action="/delete" method="post">
-        <input type="hidden" name="deleteMe" value="${vizitka}">
-        <button type="submit" class="btn btn-secondary"><i class="bi bi-x-circle" role="img" aria-label="Delete"></i>SMAZAT</button>
+        <a href="/">zpět na seznam</a>
+        <form action="/" method="post">
+        <input type="hidden" name="id" value="${id}">
+        <button type="submit" class="btn btn-secondary"><i class="bi bi-x-circle" role="img" aria-label="Delete"></i>Smazat</button>
         </form>
     </nav>
 </div>
