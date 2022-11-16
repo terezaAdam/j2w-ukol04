@@ -6,20 +6,26 @@
 </head>
 <body>
 <div class="seznam">
-    [#list seznam as vizitka]
-    <a href="/detail/${vizitka?index}">
+    [#list seznam as Vizitka]
+    <a href="/detail/${Vizitka?index}">
         <div class="vizitka">
-            <div class="jmeno">Dita Formánková</div>
-            <div class="firma">Czechitas</div>
+            <div class="jmeno">${Vizitka.jmeno}</div>
+            <div class="firma">${Vizitka.firma}</div>
             <div class="udaje">
                 <div class="adresa">
-                    <div>Václavské náměstí</div>
-                    <div><span>11000</span> Praha 1</div>
+                    <div>${Vizitka.ulice}</div>
+                    <div><span>${Vizitka.obecPsc}</span></div>
                 </div>
                 <div class="kontakty">
-                    <div><i class="bi bi-at"></i></div>
-                    <div><i class="bi bi-phone"></i></div>
-                    <div><i class="bi bi-globe"></i></div>
+                    [#if Vizitka.email?has_content]
+                    <div><i class="bi bi-at"></i>${Vizitka.email}</div>
+                    [/#if]
+                    [#if Vizitka.telefon?has_content]
+                    <div><i class="bi bi-phone"></i>${Vizitka.telefon}</div>
+                    [/#if]
+                    [#if Vizitka.web?has_content]
+                    <div><i class="bi bi-globe"></i>${Vizitka.web}</div>
+                    [/#if]
                 </div>
             </div>
         </div>
